@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2018-08-01-18:59
  **/
 @RestController
-@RequestMapping("/")
+@RequestMapping("/v1")
 public class TestController {
     @Autowired
     private ServiceRegister serviceRegister;
@@ -26,13 +26,8 @@ public class TestController {
         return "alive";
     }
 
-    @RequestMapping("/s1")
-    public String s1() {
-        return "success from " + serviceRegister.getServiceName() + " ( " + serviceRegister.getServiceId() + " )";
-    }
-
-    @RequestMapping("/s2")
-    public String s2() {
+    @RequestMapping("/onenet-video/ipc/video")
+    public String video() {
         return "success from " + serviceRegister.getServiceName() + " ( " + serviceRegister.getServiceId() + " )";
     }
 }
